@@ -1,26 +1,18 @@
 [
 	{
 		"numero":1, 
-		"textoPergunta":"pergunta",
-		"sim": 2,
-		"nao": 3
+		"textoPergunta":"Pergunta um"
 	},
 	{
 		"numero":2, 
-		"textoPergunta":"pergunta",
-		"sim": 2,
-		"nao": 3
+		"textoPergunta":"Pergunta dois"
 	},
 	{
 		"numero":3, 
-		"textoPergunta":"pergunta",
-		"sim": 2,
-		"nao": 3
+		"textoPergunta":"Pergunta Tres"
 	},
 	{
 		"numero":4, 
-		"textoPergunta":"pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta pergunta",
-		"sim": 2,
-		"nao": 3
+		"textoPergunta":"Pergunta quarrto"
 	}
 ]
