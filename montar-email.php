@@ -1,5 +1,5 @@
 <?php  
-function MontarEmail(){
+function MontarEmail($numeroRespostas){
 	ob_start();
 	$titulo = "LGPD Helper";
 ?>
@@ -11,11 +11,16 @@ function MontarEmail(){
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 	<body style="margin: 0; padding: 0;">
-		<h1><?= $titulo; ?></h1>
+		<p style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;"><?= $titulo; ?></p>
 		<p>Esse e-mail foi gerado pela extenção <b><?= $titulo; ?></b></p>
-		<p>A extenção tem como objetivo ajudar os administradores e devenvolvedores de sistemas, a se adequar as normas da <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm">Lei Geral de Proteção de Dados Pessoais (LGPDP)</a>, lei de  nº 13.709/2018</p>
-		<p>A LGPD, é a legislação brasileira que regula as atividades de tratamento de dados pessoais e que também altera os artigos 7º e 16 do Marco Civil da Interne</p>
-				
+		<p>A extenção tem como objetivo ajudar os administradores e devenvolvedores de sistemas, a se adequar as normas da <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm">Lei Geral de Proteção de Dados Pessoais (LGPDP)</a>, apartir de um questionario respondido por um usuário da extenção</p>
+		<p>LGPD é a legislação brasileira que regula as atividades de tratamento de dados pessoais e que também altera os artigos 7º e 16 do Marco Civil da Interne</p>
+		<p>Apartir do questionario foi apontado alguns pontos pelo usuário onde seu site não esta em conformidade com a LGPD </p>
+		<ul>
+			<?php foreach($respostas as $resposta): ?>
+			 	<li><?= $resposta->resposta ?></li>
+			<?php endforeach; ?>
+		</ul>		
 	</body>
 </html>
 <?php
