@@ -1,5 +1,9 @@
 <?php  
 function MontarEmail($numeroRespostas){
+	$url = './perguntas.json';
+	$contents = file_get_contents($url);
+	$contents = utf8_encode($contents);
+	$respostas = json_decode($contents);
 	ob_start();
 	$titulo = "LGPD Helper";
 ?>
