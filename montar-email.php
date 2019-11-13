@@ -35,7 +35,7 @@ function MontarEmail($numerosRespostas, $urlBaseSite){
 		<p style="color:red">ATENÇÃO!!</p>
 		<p>Esse e-mail pode ser gerado por qualquer usuário da extensão, podendo se tratar de um leigo ou um técnico no assunto. Avaliar os pontos com cautela.</p>-->
 		
-		<table align="center" border="0" cellpadding="0" cellspacing="0" width="700">
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
 			<tr>
 				<td bgcolor="#70bbd9">
 					<p style="color: #153643; font-family: Arial, sans-serif; font-size: 30px; text-align: center"><?= $titulo; ?></p>
