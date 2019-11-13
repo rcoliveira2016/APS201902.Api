@@ -10,17 +10,18 @@ try {
 	$whois = new SimpleXMLElement($xml);
 	$emailContato = $whois->contactEmail;
 
-	// emails para quem será enviado o formulário
+
 	//$emailenviar = "roramon7@gmail.com";
 	$emailenviar = $emailContato;
 	$destino = $emailenviar;
 	$assunto = "LGPD Helper";
 
-	// É necessário indicar que o formato do e-mail é html
+
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 	$headers .= "From: LGPD-Helper";
 
+	$urlBaseSite parse_url($url)
 	$conteudo = "<h1>LGPD Helper</h1><p>Verificar os seguintes pontos sobre segurança de dados</p>";
 
 	$enviaremail = mail($destino, $assunto, $conteudo, $headers);
