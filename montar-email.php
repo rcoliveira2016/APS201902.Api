@@ -113,5 +113,5 @@ function MontarEmail($numerosRespostas, $urlBaseSite){
   return  $pagemaincontent;
 }
   
-  echo MontarEmail(array(1,2,3), "https://stackoverflow.com/");
+  //echo MontarEmail(array(1,2,3), "https://stackoverflow.com/");
 ?>
