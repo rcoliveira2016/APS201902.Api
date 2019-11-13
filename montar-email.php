@@ -1,9 +1,12 @@
 <?php  
-function MontarEmail($numeroRespostas){
+function MontarEmail($numerosRespostas){
 	$url = './perguntas.json';
 	$contents = file_get_contents($url);
 	$contents = utf8_encode($contents);
 	$respostas = json_decode($contents);
+	$respostas =  array_filter($respostas, function($v, $k) use ($numerosRespostas) {
+	    return in_array($v->numero, $numerosRespostas);
+	}, ARRAY_FILTER_USE_BOTH);
 	ob_start();
 	$titulo = "LGPD Helper";
 ?>
@@ -17,7 +20,7 @@ function MontarEmail($numeroRespostas){
 	<body style="margin: 0; padding: 0;">
 		<p style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;"><?= $titulo; ?></p>
 		<p>Esse e-mail foi gerado pela extenção <b><?= $titulo; ?></b></p>
-		<p>A extenção tem como objetivo ajudar os administradores e devenvolvedores de sistemas, a se adequar as normas da <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm">Lei Geral de Proteção de Dados Pessoais (LGPDP)</a>, apartir de um questionario respondido por um usuário da extenção</p>
+		<p>A extenção tem como objetivo ajudar os administradores e devenvolvedores de sistemas, a se adequar as normas da <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm">Lei Geral de Proteção de Dados Pessoais (LGPD)</a>, apartir de um questionario respondido por um usuário da extenção</p>
 		<p>LGPD é a legislação brasileira que regula as atividades de tratamento de dados pessoais e que também altera os artigos 7º e 16 do Marco Civil da Interne</p>
 		<p>Apartir do questionario foi apontado alguns pontos pelo usuário onde seu site não esta em conformidade com a LGPD </p>
 		<ul>
@@ -33,5 +36,5 @@ function MontarEmail($numeroRespostas){
   return  $pagemaincontent;
 }
   
-  echo MontarEmail();
+  echo MontarEmail(array(1,2,3));
 ?>
