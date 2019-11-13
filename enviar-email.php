@@ -20,9 +20,10 @@ try {
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 	$headers .= "From: LGPD-Helper";
-
+	
+	include_once "montar-email.php";
 	$urlBaseSite parse_url($url)
-	$conteudo = "<h1>LGPD Helper</h1><p>Verificar os seguintes pontos sobre segurança de dados</p>";
+	$conteudo = MontarEmail($_POST['perguntas'] $url);
 
 	$enviaremail = mail($destino, $assunto, $conteudo, $headers);
 
