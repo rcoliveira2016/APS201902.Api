@@ -26,7 +26,7 @@ function MontarEmail($numerosRespostas, $urlBaseSite){
 		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
 			<tr>
 				<td bgcolor="#70bbd9">
-					<p style="color: #153643; font-family: Arial, sans-serif; font-size: 30px; text-align: center"><?= $titulo; ?></p>
+					<p style="color: #ffffff; font-family: Arial, sans-serif; font-size: 30px; text-align: center"><?= $titulo; ?></p>
 				</td>
 			</tr>
 			<tr>
