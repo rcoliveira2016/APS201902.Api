@@ -3,6 +3,7 @@ try {
 	
 	if(!isset($_POST['perguntas']) || !isset($_POST['url'])){
 		http_response_code(500);
+		echo 'está faltando algum parametro';
 		die();
 	}
 	
@@ -37,6 +38,12 @@ try {
 	if($enviaremail){		
 		http_response_code(200);
 		echo $emailContato;
+		
+		$fp = fopen('./log-emails.json', "a+");
+		$data_atual = date('d/m/Y H:i:s');
+		$texto_log="$data_atual - $emailContato;\n";
+		fwrite($fp, $texto_log);		
+		fclose($fp);
 	}
 	else{
 		http_response_code(500);
