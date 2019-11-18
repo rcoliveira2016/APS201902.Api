@@ -1,5 +1,11 @@
 <?php
 try {
+	
+	if(!isset($_POST['perguntas']) || !isset($_POST['url'])){
+		http_response_code(500);
+		die();
+	}
+	
     $keyApi = 'at_8oIJWGMuZTOaiEQN8K6O52JtcgQ6j';
 	$urlApi = "https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=$keyApi&domainName=";
 
@@ -11,8 +17,9 @@ try {
 	$emailContato = $whois->contactEmail;
 
 
-	//$emailenviar = "roramon7@gmail.com";
-	$emailenviar = $emailContato;
+	$emailenviar = "roramon7@gmail.com";
+	if(!empty($emailContato))
+		$emailenviar .= ",$emailContato";
 	$destino = $emailenviar;
 	$assunto = "LGPD Helper";
 
@@ -21,9 +28,9 @@ try {
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 	$headers .= "From: LGPD-Helper";
 	
-	include_once "montar-email.php";
-	$urlBaseSite parse_url($url)
-	$conteudo = MontarEmail($_POST['perguntas'] $url);
+	include_once "./montar-email.php";
+	$urlBaseSite = $url;
+	$conteudo = MontarEmail($_POST['perguntas'], $urlBaseSite);
 
 	$enviaremail = mail($destino, $assunto, $conteudo, $headers);
 
@@ -36,7 +43,7 @@ try {
 		echo 'erro';
 	}
 } catch (Exception $e) {
-	http_response_code(505);
+	http_response_code(500);
     echo 'Exceção capturada: ',  $e->getMessage(), "\n";
 }
 

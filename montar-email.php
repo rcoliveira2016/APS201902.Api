@@ -1,12 +1,17 @@
 <?php  
 function MontarEmail($numerosRespostas, $urlBaseSite){
-	$url = './perguntas.json';
-	$contents = file_get_contents($url);
-	$contents = utf8_encode($contents);
-	$respostas = json_decode($contents);
-	$respostas =  array_filter($respostas, function($v, $k) use ($numerosRespostas) {
-	    return in_array($v->numero, $numerosRespostas);
-	}, ARRAY_FILTER_USE_BOTH);
+	if(is_array($numerosRespostas)){
+		$url = './perguntas.json';
+		$contents = file_get_contents($url);
+		$contents = utf8_encode($contents);
+		$respostas = json_decode($contents);
+		$respostas =  array_filter($respostas, function($v, $k) use ($numerosRespostas) {
+			return in_array($v->numero, $numerosRespostas);
+		}, ARRAY_FILTER_USE_BOTH);
+		
+	}else{
+		$respostas = array();
+	}
 	ob_start();
 	$titulo = "LGPD Helper";
 ?>
@@ -18,23 +23,6 @@ function MontarEmail($numerosRespostas, $urlBaseSite){
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 	<body style="margin: 0; padding: 0;">
-		<!--<p style="color: #153643; font-family: Arial, sans-serif; font-size: 30px; text-align: center"><?= $titulo; ?></p>
-		<p>Esse e-mail foi gerado pela extensão <b><?= $titulo; ?></b></p>
-		<p style="color: #153643; font-family: Arial, sans-serif; font-size: 23px;">O que é <b><?= $titulo; ?></b>?</p>
-		<p>A extensão tem como objetivo ajudar os administradores e desenvolvedores de sistemas, a se adequar às normas da <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm">Lei Geral de Proteção de Dados Pessoais (LGPD)</a>,  Isso é feito a partir de um questionário respondido na extensão, que será preenchido por um usuário que está ultilizando o sistema ou site, após o questionário respondido será gerado um e-mail.</p>
-		<p style="color: #153643; font-family: Arial, sans-serif; font-size: 23px;">O que é <b>LGPD</b>?</p>
-		<p>LGPD é a legislação brasileira que regula as atividades de tratamento de dados pessoais e que também altera os artigos 7º e 16 do Marco Civil da Internet.</p>
-		<p style="color: #153643; font-family: Arial, sans-serif; font-size: 23px;"><b>Relatório do questionário</b>:</p>
-		<p><b>Domínio que originou o relatório:</b> <?= $urlBaseSite; ?><p>
-		<p>A Partir do questionário respondido pelo usuário  da extensão, foi apontado alguns pontos onde seu sistema ou site não está em conformidade com a LGPD:</p>
-		<ul>
-			<?php foreach($respostas as $resposta): ?>
-			 	<li><?= $resposta->resposta ?></li>
-			<?php endforeach; ?>
-		</ul>
-		<p style="color:red">ATENÇÃO!!</p>
-		<p>Esse e-mail pode ser gerado por qualquer usuário da extensão, podendo se tratar de um leigo ou um técnico no assunto. Avaliar os pontos com cautela.</p>-->
-		
 		<table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
 			<tr>
 				<td bgcolor="#70bbd9">
