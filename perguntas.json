@@ -1,22 +1,47 @@
 [
 	{
 		"numero":1, 
-		"textoPergunta":"Pergunta um",
-		"resposta":"isso dai"
+		"textoPergunta":"O site pede concentimento e autorização para uso dos dados do usuário?",
+		"resposta":"Deve pedir consentimento e autorização para uso dos dados do usuário."
 	},
 	{
 		"numero":2, 
-		"textoPergunta":"Pergunta dois",
-		"resposta":"isso dai"
+		"textoPergunta":"O site deixa de forma clara a finalidade para qual seus dados estão sendo solicitados?",
+		"resposta":"Deve deixar de forma clara a finalidade para qual os dados do usuários estão sendo solicitados."
 	},
 	{
 		"numero":3, 
-		"textoPergunta":"Pergunta Tres",
-		"resposta":"isso dai"
+		"textoPergunta":"O site deixa de forma clara a forma a a duração do tratamento dos dados do usuário?",
+		"resposta":"Deve deixar de forma clara a forma e a duração do tratamento dos dados do usuário.	"
 	},
 	{
 		"numero":4, 
-		"textoPergunta":"Pergunta quarrto",
-		"resposta":"isso dai"
+		"textoPergunta":"O site deixa de forma clara a identificação e as informação de contato do controlador (reposável pelo sítio eletrônico)?",
+		"resposta":"Deve deixar de forma clara a identificação e as informações do contado do controlador."
+	},
+	{
+		"numero":5, 
+		"textoPergunta":"Os dados quais são de exclusivamente interesse do controlador, são precisos para a finalidade do tratamento?",
+		"resposta":"Todos dados requereridos devem condizer com a finalidade do tratamento."
+	},
+	{
+		"numero":6, 
+		"textoPergunta":"Quando há a verificação de que a finalidade foi alcançada ou de que os dados deixaram de ser necessários ou pertinentes, há o término dos tratamentos dos dados?",
+		"resposta":"Quando há a verificação de que a finalidade foi alcançada ou os dados deixaram de ser necessários ou pertinentes, deve haver o término dos tratamentos dos dados"
+	},
+	{
+		"numero":7, 
+		"textoPergunta":"O usuário tem acesso sempre a todos os dados que informou?",
+		"resposta":"O usuário deve ter acesso livre aos seus dados."
+	},
+	{
+		"numero":8, 
+		"textoPergunta":"O usuário tem a possibilidade de corrigir dados incompletos, inexatos ou desatualizados?",
+		"resposta":"O usuário deve ter a possibilidade de corrigir os dados incompletos, inexatos ou desatualizados."
+	},
+	{
+		"numero":9, 
+		"textoPergunta":"O encarregado pelo tratamendo dos dados aceita reclamações e comunicações dos titulares, presta esclarecimentos e adota providências?",
+		"resposta":"O encarregado pelo tratamento dos dados deve aceitar reclamações e comunicaçãoes dos titulares e prestar esclarecimentos e providências."
 	}
 ]
